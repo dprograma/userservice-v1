@@ -1,0 +1,14 @@
+[run]
+source =
+    bnplservice/tests
+    collectionsservice/tests
+    kycservice/tests
+    merchantintegrationservice/tests
+    merchantonboardingservice/tests
+    paymentoptionsservice/tests
+    productsservice/tests
+    rewardservice/tests
+    settlementservice/tests
+    supportservice/tests
+    userservice/tests
+    walletservice/tests

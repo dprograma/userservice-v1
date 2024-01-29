@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  users:
+    build:
+      context: ./userservice
+    user: root
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - SECRET_KEY=8c877f580d2f10ab318d1227557bb7fda9b483876fce3c1ff041f86746a66640
+    volumes:
+      - .:/app
+    networks:
+      - holla-network
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: holladeliveries
+      POSTGRES_USER: holla
+      POSTGRES_PASSWORD: holla
+      DB_HOST: db
+    restart: always
+    ports:
+      - "5432:5433"
+    networks:
+      - holla-network
+
+networks:
+  holla-network:
